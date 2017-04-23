@@ -1,0 +1,15 @@
+<div class="ui massive message" *ngIf="user">
+    <h1 class="ui header"> {{user.name}} </h1>
+    <p>{{user.userName}}</p>
+
+    <div class="ui mini form">
+        <div class="two fields">
+            <div class="field">
+                 <input type="text" name="name" [(ngModel)]="user.name">
+            </div>
+            <div class="field">
+                 <input type="text" name="userName" [(ngModel)]="user.userName">
+            </div>
+        </div>
+    </div>
+</div>

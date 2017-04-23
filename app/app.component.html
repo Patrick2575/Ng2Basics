@@ -8,25 +8,15 @@
 <!-- mùkgh Main  -->
 <main class="ui container">
     <div class="ui grid">
-        <div class="ui four wide column">
+        <div class="ui six wide column">
             <div class="ui fluid vertical  green menu">
                 <div class="item" *ngFor="let user of users" (click)= "setActiveUser(user)" [class.active]="user === activeUser">
                     {{user.name}}({{user.userName}})
                 </div>
             </div>
         </div>
-        <div class="ui twelve wide column">
-            <div class="ui massive message" *ngIf="activeUser">
-                <h1 class="ui header"> {{activeUser.name}} </h1>
-                <p>{{activeUser.userName}}</p>
-
-                <div class="ui mini form">
-                    <div class="field">
-                        <input type="text" name="name" [(ngModel)]="activeUser.name">
-                    </div>
-                </div>             
-                
-            </div> 
+        <div class="ui ten wide column">
+            <user-profile [user] ="activeUser"></user-profile>
             <div class="ui massive message" *ngIf="!activeUser">
                 <h1 class="ui header"> <i class="pointing left icon"></i></h1>
                 <p>Select a user</p>

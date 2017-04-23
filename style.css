@@ -14,14 +14,3 @@ header{
 main{
     margin-top: 0;
 }
-
-.ui.message .header{
-    font-size: 60px;
-    display: inline-block;
-}
-
-.ui.message p{
-    font-size: 20px;
-    display: inline-block;
-    color: #999;
-}
