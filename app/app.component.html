@@ -1,0 +1,42 @@
+<!--  Header  -->
+<header class="ui container">
+    <nav class="ui  inverted green menu">
+        <h3 class="header item">My Angular2 Application</h3>
+    </nav>   
+</header>
+
+<!-- mùkgh Main  -->
+<main class="ui container">
+    <div class="ui grid">
+        <div class="ui four wide column">
+            <div class="ui fluid vertical  green menu">
+                <div class="item" *ngFor="let user of users" (click)= "setActiveUser(user)" [class.active]="user === activeUser">
+                    {{user.name}}({{user.userName}})
+                </div>
+            </div>
+        </div>
+        <div class="ui twelve wide column">
+            <div class="ui massive message" *ngIf="activeUser">
+                <h1 class="ui header"> {{activeUser.name}} </h1>
+                <p>{{activeUser.userName}}</p>
+
+                <div class="ui mini form">
+                    <div class="field">
+                        <input type="text" name="name" [(ngModel)]="activeUser.name">
+                    </div>
+                </div>             
+                
+            </div> 
+            <div class="ui massive message" *ngIf="!activeUser">
+                <h1 class="ui header"> <i class="pointing left icon"></i></h1>
+                <p>Select a user</p>
+            </div>
+        </div>
+    </div>
+      
+</main>
+
+<!--  Footer -->
+<footer class="ui center aligned container">
+    <p>Copyright &copy; 2017 Patrick.Inc</p>
+</footer>

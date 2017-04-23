@@ -1,22 +1,24 @@
 import { Component } from '@angular/core';
+import {User} from './shared/models/user';
 
 @Component({
     selector: 'my-app',
-    template: `
-        <div class="ui  page grid"> 
-            <div class="row">
-                <div class="column">
-                    <div class="ui massive message main">
-                        <h1 class="ui header"> The App Works! </h1>
-                        <p> 
-                            Angular2 environment up and running.
-                        </p>
-                    </div>
-                </div>   
-            </div>
-        </div>
-    `
+    templateUrl: './app/app.component.html' 
 })
 export class AppComponent{
+    users: User[];
+    activeUser: User;
+    constructor()
+    {
+        this.users = [
+            {id: 25, name:"Chris", userName:"Sevilayha"},
+            {id: 26, name:"Nick",  userName:"Whatnicktweets"},
+            {id: 27, name:"Holly", userName:"Hollylawly"},
+        ]
+    }
 
+    setActiveUser(user: User)
+    {
+        this.activeUser = user;
+    }
 }
