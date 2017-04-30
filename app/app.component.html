@@ -5,7 +5,7 @@
     </nav>   
 </header>
 
-<!-- mùkgh Main  -->
+<!--Main  -->
 <main class="ui container">
     <div class="ui grid">
         <div class="ui six wide column">
@@ -14,6 +14,7 @@
                     {{user.name}}({{user.userName}})
                 </div>
             </div>
+            <user-form (userCreated)="onUserCreated($event)"></user-form>
         </div>
         <div class="ui ten wide column">
             <user-profile [user] ="activeUser"></user-profile>            

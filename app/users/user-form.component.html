@@ -1,0 +1,11 @@
+<form class="ui mini form" #form="ngForm" (submit)="onSubmit()" *ngIf="active">
+    <div class="field"[ngClass]="{error: name.invalid && name.touched}">
+        <input type="text" name="name" [(ngModel)]="newUser.name" placeholder="name" required #name="ngModel">
+        <div class="ui pointing basic red label" *ngIf="name.invalid && name.touched"> Please give a name for the user </div>
+    </div>
+    <div class="field" [ngClass]="{error: userName.invalid && userName.touched}">
+        <input type="text" name="userName" [(ngModel)]="newUser.userName" placeholder="user name" required #userName="ngModel">
+        <div class="ui pointing basic red label" *ngIf="userName.invalid && userName.touched"> Please give a username for the user </div>
+    </div>
+    <button class="ui fluid primary button" type="submit" [disabled]="form.invalid">Create User</button>
+</form>
